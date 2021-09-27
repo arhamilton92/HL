@@ -1,0 +1,48 @@
+.username {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 12rem;
+    position: relative;
+    max-width: 40rem;
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 3%;
+        transform: translate(0, -50%);
+        z-index: 10;
+    }
+
+    &__text {
+        @include center-position;
+        z-index: 10;
+        font-size: 1.5rem;
+    }
+
+    &__background {
+        background-color: rgba($color-primary-xtra-light, 0.4);
+        height: 5rem;
+        width: 40rem;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        z-index: 1;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+}
+
+.splash {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: rgba($color-primary-xtra-dark, .4);
+    height: 13rem;
+    z-index: 0;
+    border-bottom: solid 1rem rgba($color-primary-xtra-dark, .2);
+}
+
+.user-search {
+}

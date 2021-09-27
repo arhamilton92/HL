@@ -1,11 +1,12 @@
 /** @format */
-import HelloWorld from './components/HelloWorld'
+import HelloWorld from './components/HelloWorld';
 
 function App() {
 	return (
-		<div className='App'>
-			<HelloWorld />
-			<div>hello!</div>
+		<div className='view'>
+			<div className='viewbox'>
+				<HelloWorld />
+			</div>
 		</div>
 	);
 }

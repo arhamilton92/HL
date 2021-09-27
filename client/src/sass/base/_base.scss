@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*, 
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body > #root > div {
+    height: 100vh;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+    box-sizing: border-box; // sets borders and padding to no longer be added to total width/height of a box
+    font-family: 'Nunito', sans-serif;
+    background-color: $color-primary-xtra-dark;
+}

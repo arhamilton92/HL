@@ -1,0 +1,21 @@
+.view {
+    height: 100%;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: $color-primary-xtra-dark;
+    z-index: 1;
+}
+
+.viewbox {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(rgb(185, 151, 218), 0.2),
+        rgba(rgb(21, 17, 39), 0.6)), 
+        
+    url(https://i.imgur.com/jLsW24D.png);
+    background-attachment: fixed;
+    border-radius: 2px;
+    position: relative;
+}
