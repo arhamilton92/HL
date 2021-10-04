@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 
 const HelloWorld = () => {
@@ -25,12 +25,11 @@ const HelloWorld = () => {
 	};
 
 	return (
-		<div>
-            <h1>HELLO WORLD</h1>
+		<Fragment>
             {connectionMessage && (
-                <div>{connectionMessage}</div>
+                <h1 className="express-connection">{connectionMessage}</h1>
             )}
-		</div>
+		</Fragment>
 	);
 };
 

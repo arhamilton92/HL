@@ -17,5 +17,14 @@
     url(https://i.imgur.com/jLsW24D.png);
     background-attachment: fixed;
     border-radius: 2px;
-    position: relative;
+}
+
+.container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 8rem 1fr;
+    width: 80%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
 }

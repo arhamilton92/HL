@@ -5,7 +5,9 @@ function App() {
 	return (
 		<div className='view'>
 			<div className='viewbox'>
-				<HelloWorld />
+				<div className="container">
+					<HelloWorld />
+				</div>
 			</div>
 		</div>
 	);
