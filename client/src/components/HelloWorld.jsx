@@ -10,10 +10,11 @@ const HelloWorld = () => {
 
     const getConnection = () => {
         let url;
-		process.env.NODE_ENV === 'development' ? url = `http://localhost:8000/api` : url = process.env.REACT_APP_API
+		process.env.NODE_ENV === 'development' ? url = `http://localhost:8000/api/` : url = process.env.REACT_APP_API
         axios({
             method: 'GET',
-			url: url
+			url,
+			withCredentials: true
 		})
 			.then((res) => {
 				console.log(res)
