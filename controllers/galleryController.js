@@ -24,3 +24,17 @@ exports.showGallery = catchAsync(async (req, res, next) => {
 		token: req.daToken,
 	});
 });
+
+exports.getMasterlist = catchAsync(async (req, res, next) => {
+	console.log('gallery');
+	const url = `https://www.deviantart.com/api/v1/oauth2/gallery/all?access_token=${req.daToken}&username=bananadex&limit=20`;
+	const masterlist = await axios({
+		method: 'GET',
+		url: url,
+	});
+	res.status(200).json({
+		message: 'success',
+		masterlist: masterlist.data.results,
+		token: req.daToken,
+	});
+})

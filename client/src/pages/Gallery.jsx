@@ -48,22 +48,24 @@ const Gallery = ({ match }) => {
 	};
 
 	return (
-		<div className="gallery-container">
+		<div className='gallery__component'>
 			{/* <form className="gallery__selector">
 				<h1 className='gallery__selector--title'>Gallery</h1>
 				<button className="gallery__selector--btn">bUTTS</button>
 			</form> */}
 			{userIcon && (
-				<div className='user'>
-					<div className="user__icon">
-					<img src={userIcon}></img>
+				<div className='gallery__user'>
+					<div className='gallery__user--icon'>
+						<img src={userIcon}></img>
 					</div>
-					<h1 className='user__text'>{galleryUser}</h1>
+					<h1 className='gallery__user--text'>{galleryUser}</h1>
 				</div>
 			)}
 			{gallery && (
-				<div className="image-container">
-					<GalleryComponent photos={gallery} />
+				<div className='gallery__view'>
+					<div className='gallery__view--images'>
+						<GalleryComponent photos={gallery} />
+					</div>
 				</div>
 			)}
 		</div>
