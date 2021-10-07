@@ -172,7 +172,7 @@ body {
   display: grid;
   -ms-grid-rows: 8rem 1fr;
       grid-template-rows: 8rem 1fr;
-  width: 80%;
+  width: 90%;
   height: 100%;
 }
 
@@ -230,6 +230,16 @@ body {
 }
 
 /** @format */
+.image-container {
+  background-color: rgba(197, 197, 219, 0.2);
+}
+
+.image-container img {
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
+          box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
+}
+
 .user {
   width: 100%;
   display: -ms-grid;

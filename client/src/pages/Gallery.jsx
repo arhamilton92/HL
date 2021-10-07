@@ -59,7 +59,11 @@ const Gallery = ({ match }) => {
 					<h2 className='user__text'>{galleryUser}</h2>
 				</div>
 			)}
-			{gallery && <GalleryComponent photos={gallery} />}
+			{gallery && (
+				<div className="image-container">
+					<GalleryComponent photos={gallery} />
+				</div>
+			)}
 		</div>
 	);
 };

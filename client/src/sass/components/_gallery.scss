@@ -1,6 +1,12 @@
 /** @format */
 
-.gallery-container {
+.image-container {
+    background-color: rgba($color-primary-xtra-light, 0.2);
+
+    img {
+        border-radius: 3px;
+        box-shadow: 0 2rem 5rem rgba(rgb(35, 15, 71), 0.3);
+    }
 }
 
 // .gallery {
@@ -28,7 +34,7 @@
 	display: grid;
 	grid-template-columns: 1fr repeat(2, min-content) 1fr;
     padding: 3rem;
-    
+
 	&__icon {
 		grid-column: 2 / 3;
 	}
