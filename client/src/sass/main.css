@@ -234,6 +234,14 @@ body {
 }
 
 /** @format */
+.image-container img {
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
+          box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
+  max-width: 100%;
+  background-color: rgba(197, 197, 219, 0.1);
+}
+
 .user {
   display: -ms-grid;
   display: grid;
