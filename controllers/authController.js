@@ -49,18 +49,31 @@ const getDaToken = catchAsync(async (req, res, next) => {
 	}
 });
 
-exports.daClientAccess = catchAsync(async (req, res, next) => {
-	console.log(req.cookies.daToken);
+const checkToken = async (token) => {
+	console.log(token);
+	console.log('checkToken');
+	const url = `https://www.deviantart.com/api/v1/oauth2/placebo?access_token=${token}`;
+	try {
+		const verify = await axios({
+			method: 'GET',
+			url,
+		});
+		return true
+	} catch (error) {
+		return false
+	}
+};
+
+exports.daConnect = catchAsync(async (req, res, next) => {
 	if (req.cookies.daToken) {
-		try {
-			const decoded = await jwt.verify(
-				req.cookies.daToken,
-				process.env.JWT_SECRET
-			);
-			console.log(decoded);
-			next();
-		} catch (error) {
-			getDaToken(req, res, next);
-		}
+		const decoded = await jwt.verify(
+			req.cookies.daToken,
+			process.env.JWT_SECRET
+		);
+		req.daToken = decoded.tokenCode;
+		if (await checkToken(decoded.tokenCode)) next()
+		else getDaToken(req, res, next);
+	} else {
+		getDaToken(req, res, next);
 	}
 });

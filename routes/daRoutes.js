@@ -1,10 +1,11 @@
 /** @format */
 
 const express = require('express');
-const { daClientAccess } = require('../controllers/authController');
+const { daConnect } = require('../controllers/authController');
+const { showGallery } = require('../controllers/galleryController');
 
 const router = express.Router();
 
-router.get('/', daClientAccess)
+router.get('/', daConnect, showGallery)
 
 module.exports = router;
