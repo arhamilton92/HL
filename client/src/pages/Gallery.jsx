@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
-import GalleryComponent from "react-photo-gallery";
+import GalleryComponent from 'react-photo-gallery';
 
 const Gallery = ({ match }) => {
 	const [gallery, setGallery] = useState(null);
-	const [galleryUser, setGalleryUser] = useState(match.params.user)
+	const [galleryUser, setGalleryUser] = useState(match.params.user);
+	const [userIcon, setUserIcon] = useState(null);
 
 	useEffect(() => {
 		getConnection();
@@ -18,14 +19,14 @@ const Gallery = ({ match }) => {
 				return {
 					height: el.preview.height,
 					width: el.preview.width,
-					src: el.preview.src
+					src: el.preview.src,
 				};
 			})
 		);
 	};
 
 	const getConnection = () => {
-		console.log('fetching gallery...')
+		console.log('fetching gallery...');
 		let url;
 		process.env.NODE_ENV === 'development'
 			? (url = `http://localhost:8000/api/gallery/${galleryUser}`)
@@ -38,6 +39,7 @@ const Gallery = ({ match }) => {
 			.then((res) => {
 				console.log(res.data);
 				createItems(res.data.gallery);
+				setUserIcon(res.data.profile.usericon);
 			})
 			.catch((error) => {
 				console.log('error');
@@ -46,16 +48,19 @@ const Gallery = ({ match }) => {
 	};
 
 	return (
-		<Fragment>
+		<div className="gallery-container">
 			{/* <form className="gallery__selector">
 				<h1 className='gallery__selector--title'>Gallery</h1>
 				<button className="gallery__selector--btn">bUTTS</button>
 			</form> */}
-			<h1>{galleryUser}</h1>
-			{gallery && (
-				<GalleryComponent photos={gallery}/>
+			{userIcon && (
+				<div className='user'>
+					<img className="user__icon" src={userIcon}></img>
+					<h2 className='user__text'>{galleryUser}</h2>
+				</div>
 			)}
-		</Fragment>
+			{gallery && <GalleryComponent photos={gallery} />}
+		</div>
 	);
 };
 
