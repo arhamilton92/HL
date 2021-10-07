@@ -5,8 +5,10 @@ const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 
 exports.showGallery = catchAsync(async (req, res, next) => {
+	const { user } = req.params
+	console.log(user)
 	console.log('gallery');
-	const url = `https://www.deviantart.com/api/v1/oauth2/gallery/all?access_token=${req.daToken}&username=bananamantis&limit=20`;
+	const url = `https://www.deviantart.com/api/v1/oauth2/gallery/all?access_token=${req.daToken}&username=${user}&limit=20`;
 	try {
 		const gallery = await axios({
 			method: 'GET',

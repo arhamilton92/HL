@@ -7,5 +7,6 @@ const { showGallery } = require('../controllers/galleryController');
 const router = express.Router();
 
 router.get('/', daConnect, showGallery)
+router.get('/gallery/:user', daConnect, showGallery)
 
 module.exports = router;

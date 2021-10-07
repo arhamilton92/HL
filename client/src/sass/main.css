@@ -233,7 +233,25 @@ body {
   border-bottom: solid 1rem rgba(16, 15, 36, 0.2);
 }
 
-.pro-gallery-margin-container {
-  height: 400px !important;
+.gallery__selector {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr (1fr)[3] 1fr;
+      grid-template-columns: 1fr repeat(3, 1fr) 1fr;
+}
+
+.gallery__selector--title {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+}
+
+.gallery__selector--btn {
+  padding: 0;
+  margin: 0;
+  border-radius: 2px;
+  border: none;
+  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */

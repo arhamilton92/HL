@@ -1,13 +1,12 @@
 /** @format */
-
-import Gallery from './pages/Gallery';
+import Routes from './Routes'
 
 function App() {
 	return (
 		<div className='view'>
 			<div className='viewbox'>
 				<div className='container'>
-					<Gallery />
+					<Routes />
 				</div>
 			</div>
 		</div>

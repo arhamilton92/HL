@@ -2,37 +2,17 @@
 
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
-import { renderGallery } from './utils/Gallery.jsx';
 import GalleryComponent from "react-photo-gallery";
 
-const Gallery = () => {
+const Gallery = ({ match }) => {
 	const [gallery, setGallery] = useState(null);
+	const [galleryUser, setGalleryUser] = useState(match.params.user)
 
 	useEffect(() => {
 		getConnection();
 	}, []);
 
 	const createItems = (gall) => {
-		// setGallery(
-		// 	gall.map((el) => {
-		// 		return {
-		// 			itemId: el.deviationId,
-		// 			mediaUrl: el.preview.src,
-		// 			metaData: {
-		// 				type: 'image',
-		// 				height: el.preview.height,
-		// 				width: el.preview.width,
-		// 				title: el.title,
-		// 				description: 'sample-description',
-		// 				focalPoint: [0, 0],
-		// 				link: {
-		// 					url: 'http://example.com',
-		// 					target: '_blank',
-		// 				},
-		// 			},
-		// 		};
-		// 	})
-		// );
 		setGallery(
 			gall.map((el) => {
 				return {
@@ -47,7 +27,7 @@ const Gallery = () => {
 	const getConnection = () => {
 		let url;
 		process.env.NODE_ENV === 'development'
-			? (url = `http://localhost:8000/api/`)
+			? (url = `http://localhost:8000/api/gallery/${galleryUser}`)
 			: (url = process.env.REACT_APP_API);
 		axios({
 			method: 'GET',
@@ -66,7 +46,11 @@ const Gallery = () => {
 
 	return (
 		<Fragment>
-			<h1 className='express-connection'>Gallery</h1>
+			{/* <form className="gallery__selector">
+				<h1 className='gallery__selector--title'>Gallery</h1>
+				<button className="gallery__selector--btn">bUTTS</button>
+			</form> */}
+			<h1>{galleryUser}</h1>
 			{gallery && (
 				<GalleryComponent photos={gallery}/>
 			)}
