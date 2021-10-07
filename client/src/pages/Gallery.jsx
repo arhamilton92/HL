@@ -55,8 +55,10 @@ const Gallery = ({ match }) => {
 			</form> */}
 			{userIcon && (
 				<div className='user'>
-					<img className="user__icon" src={userIcon}></img>
-					<h2 className='user__text'>{galleryUser}</h2>
+					<div className="user__icon">
+					<img src={userIcon}></img>
+					</div>
+					<h1 className='user__text'>{galleryUser}</h1>
 				</div>
 			)}
 			{gallery && (

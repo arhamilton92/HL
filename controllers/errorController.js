@@ -30,6 +30,7 @@ const handleJWTExpired = () =>
 // ^ JWT ERROR ^ 
 
 const sendErrorDev = (err, req, res) => {
+	console.log('dev // error')
 	if (req.originalUrl.startsWith('/api')) {
 		//API
 		return res.status(err.statusCode).json({
@@ -78,6 +79,7 @@ const sendErrorProd = (err, req, res) => {
 };
 
 module.exports = (err, req, res, next) => {
+	console.log('error')
 	err.statusCode = err.statusCode || 500;
 	err.status = err.status || 'error';
 	//

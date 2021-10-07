@@ -60,7 +60,9 @@ const checkToken = async (token) => {
 };
 
 exports.daConnect = catchAsync(async (req, res, next) => {
+	console.log('daConnect')
 	if (req.cookies.daToken) {
+		console.log('token')
 		const decoded = await jwt.verify(
 			req.cookies.daToken,
 			process.env.JWT_SECRET
@@ -69,6 +71,7 @@ exports.daConnect = catchAsync(async (req, res, next) => {
 		if (await checkToken(decoded.tokenCode)) next();
 		else getDaToken(req, res, next);
 	} else {
+		console.log('no token')
 		getDaToken(req, res, next);
 	}
 });

@@ -13,6 +13,7 @@
 ORDER: Base + typography > general layout + grid > page layout > components
 */
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
 *,
 *::after,
 *::before {
@@ -38,7 +39,7 @@ body {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   color: #fff;
@@ -155,7 +156,7 @@ body {
 }
 
 .viewbox::-webkit-scrollbar-track {
-  background: #6698d1;
+  background: #af96df;
 }
 
 .viewbox::-webkit-scrollbar-thumb {
@@ -174,6 +175,9 @@ body {
       grid-template-rows: 8rem 1fr;
   width: 90%;
   height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .username {
@@ -230,42 +234,50 @@ body {
 }
 
 /** @format */
-.image-container {
-  background-color: rgba(197, 197, 219, 0.2);
-}
-
-.image-container img {
-  border-radius: 3px;
-  -webkit-box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
-          box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
-}
-
 .user {
-  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr (min-content)[2] 1fr;
       grid-template-columns: 1fr repeat(2, -webkit-min-content) 1fr;
       grid-template-columns: 1fr repeat(2, min-content) 1fr;
-  padding: 3rem;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-style: solid;
+  border-top: none;
+  border-color: #c5c5db;
+  overflow: hidden;
+  background-color: rgba(44, 39, 71, 0.5);
+  margin-bottom: 3rem;
 }
 
 .user__icon {
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
+  width: 100px;
+  height: 100px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-left: 2rem;
 }
 
 .user__text {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
-  padding: 1rem;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  padding-left: 6rem;
+  height: 100px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 3rem;
 }
 /*# sourceMappingURL=main.css.map */

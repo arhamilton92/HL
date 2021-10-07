@@ -1,49 +1,42 @@
 /** @format */
 
-.image-container {
-    background-color: rgba($color-primary-xtra-light, 0.2);
+.react-photo-gallery--gallery {
+    div {
+        img {
 
-    img {
-        border-radius: 3px;
-        box-shadow: 0 2rem 5rem rgba(rgb(35, 15, 71), 0.3);
+        }
     }
 }
 
-// .gallery {
-//     &__selector {
-//         width: 100%;
-//         display: grid;
-//         grid-template-columns: 1fr repeat(3, 1fr) 1fr;
-
-//         &--title {
-//             grid-column: 2 / 4
-//         }
-
-//         &--btn {
-//             padding: 0;
-//             margin: 0;
-//             border-radius: 2px;
-//             border: none;
-//             text-decoration: none;
-//         }
-//     }
-// }
-
 .user {
-	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr repeat(2, min-content) 1fr;
-    padding: 3rem;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-style: solid;
+    border-top: none;
+    border-color: $color-primary-xtra-light;
+    overflow: hidden;
+    background-color: rgba($color-primary, 0.5);
+    margin-bottom: 3rem;
 
 	&__icon {
-		grid-column: 2 / 3;
+		grid-column: 1 / 2;
+        width: 100px;
+        height: 100px;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        
+        margin-left: 2rem;
 	}
 
     &__text {
 		grid-column: 3 / 4;
-        padding: 1rem;
-        justify-self: center;
-        align-self: center;
-        padding-left: 6rem;
+        height: 100px;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        padding: 3rem;
 	}
 }

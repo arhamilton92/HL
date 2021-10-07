@@ -21,7 +21,6 @@ exports.showGallery = catchAsync(async (req, res, next) => {
 		gallery: gallery.data.results,
 		profile: profile.data.user,
 		galleryUrl,
-		profileUrl,
 		token: req.daToken,
 	});
 });
