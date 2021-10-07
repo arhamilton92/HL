@@ -9,7 +9,7 @@ const Routes = () => {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route path='/' component={Connect} />
+				<Route exact path='/' component={Connect} />
 				<Route path='/gallery/:user' component={Gallery} />
 			</Switch>
 		</BrowserRouter>
