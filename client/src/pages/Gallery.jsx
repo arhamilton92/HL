@@ -25,6 +25,7 @@ const Gallery = ({ match }) => {
 	};
 
 	const getConnection = () => {
+		console.log('fetching gallery...')
 		let url;
 		process.env.NODE_ENV === 'development'
 			? (url = `http://localhost:8000/api/gallery/${galleryUser}`)

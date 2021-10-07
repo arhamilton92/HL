@@ -19,7 +19,7 @@
 		url(../BG.png);
 	background-attachment: fixed;
 	border-radius: 2px;
-	overflow-y: scroll;
+	overflow-y: auto;
 
 	/* width */
 	&::-webkit-scrollbar {

@@ -143,7 +143,7 @@ body {
   background-image: linear-gradient(to bottom, rgba(185, 151, 218, 0.2), rgba(21, 17, 39, 0.6)), url(../BG.png);
   background-attachment: fixed;
   border-radius: 2px;
-  overflow-y: scroll;
+  overflow-y: auto;
   /* width */
   /* Track */
   /* Handle */
