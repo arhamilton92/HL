@@ -29,7 +29,7 @@ const Gallery = ({ match }) => {
 		let url;
 		process.env.NODE_ENV === 'development'
 			? (url = `http://localhost:8000/api/gallery/${galleryUser}`)
-			: (url = `${process.env.REACT_APP_API}/gallery/:user`);
+			: (url = `${process.env.REACT_APP_API}/gallery/${galleryUser}`);
 		axios({
 			method: 'GET',
 			url,
