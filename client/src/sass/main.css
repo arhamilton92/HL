@@ -139,8 +139,8 @@ body {
 .viewbox {
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(185, 151, 218, 0.2)), to(rgba(21, 17, 39, 0.6))), url(https://i.imgur.com/jLsW24D.png);
-  background-image: linear-gradient(to bottom, rgba(185, 151, 218, 0.2), rgba(21, 17, 39, 0.6)), url(https://i.imgur.com/jLsW24D.png);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(185, 151, 218, 0.2)), to(rgba(21, 17, 39, 0.6))), url(../BG.png);
+  background-image: linear-gradient(to bottom, rgba(185, 151, 218, 0.2), rgba(21, 17, 39, 0.6)), url(../BG.png);
   background-attachment: fixed;
   border-radius: 2px;
   overflow-y: scroll;
