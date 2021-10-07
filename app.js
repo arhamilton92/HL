@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 // UTILS
 const daRouter = require('./routes/daRoutes');
-const globalErrorHandler= require('./controllers/errorController.js')
+const globalErrorHandler = require('./controllers/errorController.js')
 
 const app = express();
 
