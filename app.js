@@ -37,7 +37,9 @@ if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev')); // dev logging
 }
 // set security http headers
-app.use(helmet());
+app.use(helmet({
+	contentSecurityPolicy: false,
+}));
 // limit ip request rate
 const limiter = rateLimit({
 	max: 2000,
