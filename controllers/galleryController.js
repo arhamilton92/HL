@@ -1,7 +1,6 @@
 /** @format */
 
 const axios = require('axios');
-const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 
 exports.showGallery = catchAsync(async (req, res, next) => {

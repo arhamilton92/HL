@@ -54,7 +54,7 @@ const checkToken = async (token) => {
 	console.log('checkToken');
 	const url = `https://www.deviantart.com/api/v1/oauth2/placebo?access_token=${token}`;
 	try {
-		const verify = await axios({
+		await axios({
 			method: 'GET',
 			url,
 		});
@@ -77,3 +77,11 @@ exports.daConnect = catchAsync(async (req, res, next) => {
 		getDaToken(req, res, next);
 	}
 });
+
+
+exports.connect = (req, res, next) => {
+	res.status(200).json({
+		status: 'success',
+		message: 'API connected'
+	})
+}

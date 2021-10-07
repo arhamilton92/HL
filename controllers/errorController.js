@@ -1,5 +1,6 @@
 module.exports = (err, req, res, next) => {
-    console.log('error handling')
+	console.log('error handling')
+	console.log(err)
 	if (req.originalUrl.startsWith('/api')) {
 		//API
 		return res.status(err.statusCode).json({
@@ -10,8 +11,10 @@ module.exports = (err, req, res, next) => {
 		});
 	}
 	// RENDERED WEBSITE
-	res.status(err.statusCode).render('error', {
-		title: 'Something went wrong',
-		msg: err.message,
-	});
+	else {
+		res.status(err.statusCode).render('error', {
+			title: 'Something went wrong',
+			msg: err.message,
+		});
+	}
 };
