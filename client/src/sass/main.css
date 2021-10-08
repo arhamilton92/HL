@@ -145,8 +145,8 @@ h1 {
 .viewbox {
   width: 100%;
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(185, 151, 218, 0.2)), to(rgba(21, 17, 39, 0.6))), url(../BG.png);
-  background-image: linear-gradient(to bottom, rgba(185, 151, 218, 0.2), rgba(21, 17, 39, 0.6)), url(../BG.png);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(175, 150, 223, 0.2)), to(rgba(29, 27, 71, 0.5))), url(../BG.png);
+  background-image: linear-gradient(to bottom, rgba(175, 150, 223, 0.2), rgba(29, 27, 71, 0.5)), url(../BG.png);
   background-attachment: fixed;
   border-radius: 2px;
   overflow-y: auto;
@@ -236,8 +236,9 @@ h1 {
 
 /** @format */
 .gallery__component {
-  width: 100%;
   height: 100%;
+  max-width: 1300px;
+  margin: auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: min-content 1fr;
@@ -247,17 +248,15 @@ h1 {
 }
 
 .gallery__user {
-  background-color: rgba(44, 39, 71, 0.5);
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-style: solid;
   border-top: none;
   border-color: #c5c5db;
-  background-color: rgba(44, 39, 71, 0.5);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(29, 27, 71, 0.5)), color-stop(rgba(64, 60, 90, 0.6)), to(rgba(29, 27, 71, 0.5)));
+  background-image: linear-gradient(to right, rgba(29, 27, 71, 0.5), rgba(64, 60, 90, 0.6), rgba(29, 27, 71, 0.5));
   overflow: hidden;
   margin-bottom: 3rem;
-  -webkit-box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
-          box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: min-content min-content;
@@ -295,6 +294,8 @@ h1 {
 
 .gallery__view {
   overflow: auto;
+  -webkit-box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
+          box-shadow: 0 2rem 5rem rgba(35, 15, 71, 0.3);
   height: 100%;
   /* width */
   /* Track */

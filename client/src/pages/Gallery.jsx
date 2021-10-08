@@ -7,6 +7,7 @@ import GalleryComponent from 'react-photo-gallery';
 const Gallery = ({ match }) => {
 	const [gallery, setGallery] = useState(null);
 	const [galleryUser, setGalleryUser] = useState(match.params.user);
+	const [username, setUsername] = useState(null)
 	const [userIcon, setUserIcon] = useState(null);
 
 	useEffect(() => {
@@ -37,7 +38,6 @@ const Gallery = ({ match }) => {
 			withCredentials: true,
 		})
 			.then((res) => {
-				console.log(res.data);
 				createItems(res.data.gallery);
 				setUserIcon(res.data.profile.usericon);
 			})
@@ -53,14 +53,13 @@ const Gallery = ({ match }) => {
 				<h1 className='gallery__selector--title'>Gallery</h1>
 				<button className="gallery__selector--btn">bUTTS</button>
 			</form> */}
-			{userIcon && (
-				<div className='gallery__user'>
-					<div className='gallery__user--icon'>
-						<img src={userIcon}></img>
-					</div>
-					<h1 className='gallery__user--text'>{galleryUser}</h1>
+
+			<div className='gallery__user'>
+				<div className='gallery__user--icon'>
+					{userIcon && <img src={userIcon}></img>}
 				</div>
-			)}
+				{userIcon && (<h1 className='gallery__user--text'>{galleryUser}</h1>)}
+			</div>
 			{gallery && (
 				<div className='gallery__view'>
 					<div className='gallery__view--images'>

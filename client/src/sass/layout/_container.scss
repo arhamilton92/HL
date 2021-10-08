@@ -13,8 +13,8 @@
 	height: 100%;
 	background-image: linear-gradient(
 			to bottom,
-			rgba(rgb(185, 151, 218), 0.2),
-			rgba(rgb(21, 17, 39), 0.6)
+			rgba($color-primary-light, 0.2),
+			rgba($color-primary-dark, 0.5)
 		),
 		url(../BG.png);
 	background-attachment: fixed;
