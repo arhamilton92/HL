@@ -19,18 +19,17 @@
 	/* width */
 	&::-webkit-scrollbar {
 		width: 3px;
+		height: 100%;
 	}
 
 	/* Track */
 	&::-webkit-scrollbar-track {
 		background: none;
-        margin-top: 2px;
-        margin-bottom: 2px;
 	}
 
 	/* Handle */
 	&::-webkit-scrollbar-thumb {
-		background: $color-grey-light-2;
+		background: $color-primary-xtra-light;
         border-radius: 2px;
 	}
 

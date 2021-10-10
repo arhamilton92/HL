@@ -14,7 +14,7 @@
 ORDER: Base + typography > general layout + grid > page layout > components
 */
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap");
 *,
 *::after,
 *::before {
@@ -41,7 +41,7 @@ body {
 
 body {
   font-family: "Raleway", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.6rem;
   color: #fff;
   line-height: 1.7;
@@ -49,6 +49,10 @@ body {
 
 h1 {
   font-size: 2rem;
+}
+
+h4 {
+  font-weight: 500;
 }
 
 .paragraph {
@@ -158,16 +162,15 @@ h1 {
 
 .viewbox::-webkit-scrollbar {
   width: 3px;
+  height: 100%;
 }
 
 .viewbox::-webkit-scrollbar-track {
   background: none;
-  margin-top: 2px;
-  margin-bottom: 2px;
 }
 
 .viewbox::-webkit-scrollbar-thumb {
-  background: #eee;
+  background: #c5c5db;
   border-radius: 2px;
 }
 
@@ -179,59 +182,134 @@ h1 {
   margin: 0 auto;
   width: 90%;
   height: 100%;
+  display: -ms-grid;
+  display: grid;
 }
 
-.username {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  height: 12rem;
+/** @format */
+.traits {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  overflow: auto;
+  padding-bottom: 2rem;
+  -ms-grid-rows: min-content 1fr;
+      grid-template-rows: -webkit-min-content 1fr;
+      grid-template-rows: min-content 1fr;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.traits__display {
+  width: 100%;
+  padding-bottom: 2rem;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  background-size: 150px;
   position: relative;
-  max-width: 40rem;
 }
 
-.username__icon {
+.traits__display--canvas {
+  display: block;
+  margin: auto;
+  position: relative;
+  z-index: 20;
+}
+
+.traits__display--bg {
+  width: 100%;
+  height: 50%;
+  background-color: rgba(175, 150, 223, 0.5);
   position: absolute;
-  top: 50%;
-  left: 3%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  z-index: 10;
-}
-
-.username__text {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: 10;
-  font-size: 1.5rem;
-}
-
-.username__background {
-  background-color: rgba(197, 197, 219, 0.4);
-  height: 5rem;
-  width: 40rem;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
   z-index: 1;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
 }
 
-.splash {
-  position: relative;
-  top: 0;
+.traits__window {
+  height: 100%;
   width: 100%;
-  background-color: rgba(16, 15, 36, 0.4);
-  height: 13rem;
-  z-index: 0;
-  border-bottom: solid 1rem rgba(16, 15, 36, 0.2);
+  grid-row: 2 / -1;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: min-content 3fr 1fr;
+      grid-template-rows: -webkit-min-content 3fr 1fr;
+      grid-template-rows: min-content 3fr 1fr;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.traits__window--nav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (min-content)[3];
+      grid-template-columns: repeat(3, -webkit-min-content);
+      grid-template-columns: repeat(3, min-content);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.traits__window--nav h4 {
+  text-decoration: none;
+  list-style: none;
+  padding: 1.5rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.traits__window--options {
+  padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  -ms-grid-rows: (min-content)[auto-fit];
+      grid-template-rows: repeat(auto-fit, -webkit-min-content);
+      grid-template-rows: repeat(auto-fit, min-content);
+  background-color: rgba(197, 197, 219, 0.3);
+  overflow: scroll;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.traits__window--options::-webkit-scrollbar {
+  width: 3px;
+  height: 100%;
+}
+
+.traits__window--options::-webkit-scrollbar-track {
+  background: none;
+}
+
+.traits__window--options::-webkit-scrollbar-thumb {
+  background: #c5c5db;
+  border-radius: 2px;
+}
+
+.traits__window--options::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.traits__window--options img {
+  padding: 0;
+  margin: 0;
+  max-height: 60%;
 }
 
 /** @format */
@@ -305,16 +383,15 @@ h1 {
 
 .gallery__view::-webkit-scrollbar {
   width: 3px;
+  height: 100%;
 }
 
 .gallery__view::-webkit-scrollbar-track {
   background: none;
-  margin-top: 2px;
-  margin-bottom: 2px;
 }
 
 .gallery__view::-webkit-scrollbar-thumb {
-  background: #eee;
+  background: #c5c5db;
   border-radius: 2px;
 }
 
