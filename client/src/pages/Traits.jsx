@@ -1,8 +1,7 @@
 /** @format */
 
-import React, { useRef, useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import Canvas from './components/Canvas.jsx';
-import trait from '../img/trait.png';
 
 import ears from '../img/earsicon.png';
 import horns from '../img/hornsicon.png';
@@ -11,13 +10,20 @@ import tail from '../img/tailicon.png';
 
 function Traits() {
 	const [width, setWidth] = React.useState(window.innerWidth);
+	const [random, setRandom] = useState(false)
 
 	useEffect(() => {
 		window.addEventListener('resize', () => {
 			setWidth(window.innerWidth);
 			console.log(width);
 		});
+		setRandom(true)
 	}, []);
+
+	const clicky = () => {
+		console.log('clicky')
+		setRandom(true)
+	}
 
 	return (
 		<div className='traits'>
@@ -53,8 +59,11 @@ function Traits() {
 				<div className='traits__window--info'>trait info</div>
 			</div>
 			<div className='traits__display'>
-				{width >= 1200 && <Canvas scale={0.6} />}
-				{width <= 1199 && <Canvas scale={0.6} />}
+				<button className="traits__display--randomise" onClick={(e) => {clicky(e)}}>
+				randomize
+			</button>
+				{width >= 1200 && <Canvas scale={0.6} random={random} setRandom={setRandom} />}
+				{width <= 1199 && <Canvas scale={0.6} random={random} setRandom={setRandom} />}
 				<div className='traits__display--bg'></div>
 			</div>
 		</div>
