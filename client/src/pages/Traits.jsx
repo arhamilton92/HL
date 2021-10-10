@@ -45,8 +45,8 @@ function Traits() {
 				<div className='traits__window--desc'>trait info</div>
 			</div>
 			<div className='traits__display'>
-				{width >= 1200 && <Canvas scale={0.6} />}
-				{width <= 1199 && <Canvas scale={0.5} />}
+				{width >= 1200 && <Canvas scale={0.8} />}
+				{width <= 1199 && <Canvas scale={0.6} />}
 				<div className='traits__display--bg'></div>
 			</div>
 		</div>
