@@ -189,6 +189,7 @@ h4 {
 /** @format */
 .traits {
   width: 70%;
+  min-height: 850px;
   padding: 2rem;
   overflow: auto;
   padding-bottom: 2rem;
@@ -198,6 +199,8 @@ h4 {
   display: grid;
   -ms-grid-rows: 1fr 2fr;
       grid-template-rows: 1fr 2fr;
+  -ms-grid-columns: 12rem 1fr;
+      grid-template-columns: 12rem 1fr;
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
@@ -212,17 +215,54 @@ h4 {
   }
 }
 
+.traits__nav {
+  background-color: rgba(16, 15, 36, 0.9);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 100%;
+  padding: 1rem;
+  content: '';
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+}
+
+.traits__nav--content {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  content: '';
+  background-color: rgba(175, 150, 223, 0.5);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.traits__nav--content img {
+  margin-bottom: 2rem;
+  max-width: 100%;
+  min-width: 50%;
+}
+
 .traits__display {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 5px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-width: 1rem;
+  border-color: rgba(16, 15, 36, 0.9);
   width: 100%;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
   background-size: 150px;
   position: relative;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1 / 2;
-  padding-bottom: 2rem;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -241,7 +281,6 @@ h4 {
 .traits__display--bg {
   width: 100%;
   height: 30%;
-  background-color: rgba(175, 150, 223, 0.5);
   position: absolute;
   position: absolute;
   top: 50%;
@@ -254,34 +293,18 @@ h4 {
 .traits__window {
   height: 100%;
   min-width: 100%;
+  padding: 2rem;
+  border-bottom-style: solid;
+  border-right-style: solid;
+  border-width: 1rem;
+  border-color: rgba(16, 15, 36, 0.9);
   grid-row: 2 / -1;
+  grid-column: 2 / -1;
   background-color: rgba(0, 0, 0, 0.5);
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: min-content 3fr 1fr;
-      grid-template-rows: -webkit-min-content 3fr 1fr;
-      grid-template-rows: min-content 3fr 1fr;
-  border-radius: 3px;
+  border-bottom-right-radius: 5px;
   overflow: hidden;
-}
-
-.traits__window--nav {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (min-content)[3];
-      grid-template-columns: repeat(3, -webkit-min-content);
-      grid-template-columns: repeat(3, min-content);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.traits__window--nav h4 {
-  text-decoration: none;
-  list-style: none;
-  padding: 1.5rem;
-  -ms-grid-column-align: center;
-      justify-self: center;
 }
 
 .traits__window--options {
@@ -293,7 +316,6 @@ h4 {
   -ms-grid-rows: (min-content)[auto-fit];
       grid-template-rows: repeat(auto-fit, -webkit-min-content);
       grid-template-rows: repeat(auto-fit, min-content);
-  background-color: rgba(197, 197, 219, 0.3);
   overflow: scroll;
   justify-items: center;
   -webkit-box-align: center;
@@ -327,6 +349,13 @@ h4 {
   padding: 0;
   margin: 0;
   max-height: 60%;
+}
+
+.traits__window--info {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(175, 150, 223, 0.2);
+  border-radius: 4px;
 }
 
 /** @format */
