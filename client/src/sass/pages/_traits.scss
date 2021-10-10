@@ -1,23 +1,20 @@
 /** @format */
 
 .traits {
-	width: 100%;
-	justify-self: center;
-	display: grid;
+	width: 70%;
+    padding: 2rem;
 	overflow: auto;
 	padding-bottom: 2rem;
-	grid-template-columns: min-content 1fr;
+    justify-self: center;
+
+    display: grid;
+    grid-template-rows: 1fr 2fr;
 	justify-content: stretch;
 	justify-items: center;
 	align-content: center;
-    margin-bottom: 10rem;
-    margin-top: 10rem;
 
-	@media only screen and (max-width: $bp-xl) {
-		grid-template-rows: min-content 1fr;
-        grid-template-columns: 1fr;
-        margin-bottom: 0;
-        margin-top: 0;
+    @media only screen and (max-width: $bp-xl) {
+		width: 100%;
 	}
 
 	&__display {
@@ -26,15 +23,11 @@
 		background-size: 150px;
 		position: relative;
         grid-column: 1 / 2;
+        padding-bottom: 2rem;
 
         display: grid;
         justify-content: center;
         align-items: center;
-        
-		@media only screen and (max-width: $bp-xl) {
-			grid-column: 1 / -1;
-            margin-bottom: 3rem;
-		}
 
 		&--canvas {
 			position: relative;
@@ -49,27 +42,18 @@
 			@include center-position;
 			z-index: 1;
 
-            @media only screen and (max-width: $bp-xl) {
-                height: 50%;
-            }
-    
 		}
 	}
 
 	&__window {
 		height: 100%;
 		min-width: 100%;
-		max-width: 800px;
 		grid-row: 2 / -1;
 		background-color: rgba(black, 0.5);
 		display: grid;
 		grid-template-rows: min-content 3fr 1fr;
 		border-radius: 3px;
 		overflow: hidden;
-
-		@media only screen and (max-width: $bp-xl) {
-			grid-column: 1 / -1;
-		}
 
 		&--nav {
 			display: grid;

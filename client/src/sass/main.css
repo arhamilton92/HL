@@ -188,35 +188,27 @@ h4 {
 
 /** @format */
 .traits {
-  width: 100%;
+  width: 70%;
+  padding: 2rem;
+  overflow: auto;
+  padding-bottom: 2rem;
   -ms-grid-column-align: center;
       justify-self: center;
   display: -ms-grid;
   display: grid;
-  overflow: auto;
-  padding-bottom: 2rem;
-  -ms-grid-columns: min-content 1fr;
-      grid-template-columns: -webkit-min-content 1fr;
-      grid-template-columns: min-content 1fr;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin-bottom: 10rem;
-  margin-top: 10rem;
 }
 
 @media only screen and (max-width: 75em) {
   .traits {
-    -ms-grid-rows: min-content 1fr;
-        grid-template-rows: -webkit-min-content 1fr;
-        grid-template-rows: min-content 1fr;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    margin-bottom: 0;
-    margin-top: 0;
+    width: 100%;
   }
 }
 
@@ -230,6 +222,7 @@ h4 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+  padding-bottom: 2rem;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -238,13 +231,6 @@ h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-@media only screen and (max-width: 75em) {
-  .traits__display {
-    grid-column: 1 / -1;
-    margin-bottom: 3rem;
-  }
 }
 
 .traits__display--canvas {
@@ -265,16 +251,9 @@ h4 {
   z-index: 1;
 }
 
-@media only screen and (max-width: 75em) {
-  .traits__display--bg {
-    height: 50%;
-  }
-}
-
 .traits__window {
   height: 100%;
   min-width: 100%;
-  max-width: 800px;
   grid-row: 2 / -1;
   background-color: rgba(0, 0, 0, 0.5);
   display: -ms-grid;
@@ -284,12 +263,6 @@ h4 {
       grid-template-rows: min-content 3fr 1fr;
   border-radius: 3px;
   overflow: hidden;
-}
-
-@media only screen and (max-width: 75em) {
-  .traits__window {
-    grid-column: 1 / -1;
-  }
 }
 
 .traits__window--nav {
