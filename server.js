@@ -1,6 +1,7 @@
 /** @format */
 
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
 dotenv.config({ path: './.env' }); // ENV variables BEFORE EXPRESS
 const app = require('./app'); // EXPRESS
@@ -11,6 +12,16 @@ process.on('uncaughtException', (err) => {
 	console.log(err.name, err.message);
 	process.exit();
 });
+
+// DATABASE CONNECTION
+const password = process.env.DATABASE_PASSWORD;
+const DB = process.env.DATABASE.replace('<PASSWORD>', password);
+mongoose
+	.connect(DB, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
+	.then(console.log('DB connection successful!'));
 
 // SERVER START
 const port = process.env.PORT || 8000;
