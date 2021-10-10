@@ -188,7 +188,9 @@ h4 {
 
 /** @format */
 .traits {
-  width: 100%;
+  width: 60%;
+  -ms-grid-column-align: center;
+      justify-self: center;
   display: -ms-grid;
   display: grid;
   overflow: auto;
@@ -202,6 +204,12 @@ h4 {
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+@media only screen and (max-width: 62.5em) {
+  .traits {
+    width: 100%;
+  }
 }
 
 .traits__display {
@@ -236,7 +244,8 @@ h4 {
 
 .traits__window {
   height: 100%;
-  width: 100%;
+  min-width: 100%;
+  max-width: 800px;
   grid-row: 2 / -1;
   background-color: rgba(0, 0, 0, 0.5);
   display: -ms-grid;
