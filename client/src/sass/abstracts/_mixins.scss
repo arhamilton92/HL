@@ -39,6 +39,12 @@
 	}
 }
 
+@mixin border-dark {
+    border-width: 1rem;
+    border-style: solid;
+    border-color: $color-primary-xtra-dark;
+}
+
 // MEDIA QUERY MANAGER
 /*
     0-600px:        phone
